@@ -16,10 +16,7 @@ namespace :db do
     Student.create_table
   end
 
-  desc 'for the other code to run'
-  task :environment do
-  require_relative './config/environment'
-  end
+
 
   desc 'seed the database with some dummy data'
   task :seed do
@@ -31,4 +28,9 @@ end
 desc 'drop into the Pry console'
 task :console => :environment do
 Pry.start
+end
+
+desc 'for the other code to run'
+task :environment do
+require_relative './config/environment'
 end
